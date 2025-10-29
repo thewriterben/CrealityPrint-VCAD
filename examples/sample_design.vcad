@@ -1,0 +1,52 @@
+{
+  "design": {
+    "name": "sample_volumetric_design",
+    "version": "1.0",
+    "type": "volumetric",
+    "resolution": 0.5
+  },
+  "dimensions": {
+    "x": 100,
+    "y": 100,
+    "z": 50,
+    "units": "mm"
+  },
+  "materials": {
+    "region1": {
+      "type": "PLA",
+      "density": 1.0,
+      "color": [255, 0, 0]
+    },
+    "region2": {
+      "type": "ABS",
+      "density": 0.9,
+      "color": [0, 255, 0]
+    },
+    "support": {
+      "type": "TPU",
+      "density": 0.5,
+      "color": [0, 0, 255]
+    }
+  },
+  "regions": [
+    {
+      "name": "region1",
+      "bounds": {
+        "min": [0, 0, 0],
+        "max": [50, 100, 50]
+      }
+    },
+    {
+      "name": "region2",
+      "bounds": {
+        "min": [50, 0, 0],
+        "max": [100, 100, 50]
+      }
+    }
+  ],
+  "metadata": {
+    "author": "thewriterben",
+    "created": "2025-10-29",
+    "application": "OpenVCAD Studio"
+  }
+}

@@ -1,0 +1,10 @@
+# Python Requirements for Creality MultiMaterial Studio - OpenVCAD Integration
+# This application uses only Python standard library modules and has no external dependencies
+
+# Python version requirement: 3.7+
+# No pip packages required - uses only standard library:
+# - argparse (CLI)
+# - json (configuration files)
+# - pathlib (file handling)
+# - typing (type hints)
+# - unittest (testing)

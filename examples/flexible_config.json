@@ -1,0 +1,5 @@
+{
+  "rigid_frame": "ABS",
+  "flexible_actuator": "TPU",
+  "reinforcement": "PETG"
+}
