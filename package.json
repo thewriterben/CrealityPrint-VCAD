@@ -1,0 +1,37 @@
+{
+  "name": "creality-multimaterial-openvcad",
+  "version": "1.0.0",
+  "description": "Creality MultiMaterial Studio integration for OpenVCAD volumetric designs",
+  "main": "openvcad_multimaterial_studio.py",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thewriterben/CrealityPrint-KCAD.git"
+  },
+  "keywords": [
+    "creality",
+    "3d-printing",
+    "multi-material",
+    "openvcad",
+    "volumetric-design",
+    "voxel",
+    "functionally-graded",
+    "additive-manufacturing"
+  ],
+  "author": "thewriterben",
+  "license": "MIT",
+  "dependencies": {
+    "python": ">=3.7"
+  },
+  "features": [
+    "OpenVCAD project file support (.vcad, .py, .json)",
+    "Multi-material configuration for volumetric regions",
+    "3MF file export for Creality Print",
+    "Support for PLA, ABS, TPU, PETG materials",
+    "Command-line interface",
+    "Volumetric and voxel-based design support",
+    "Functionally graded material structures"
+  ],
+  "scripts": {
+    "test": "python3 -m unittest tests/test_openvcad_studio.py -v"
+  }
+}
