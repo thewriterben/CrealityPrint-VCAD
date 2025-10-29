@@ -1,0 +1,35 @@
+# CMakeLists.txt addition for OpenVCAD integration
+# This should be added to CrealityPrint/src/libslic3r/CMakeLists.txt
+
+# OpenVCAD Format Support
+set(VCAD_SOURCES
+    Format/VCAD.cpp
+    Format/VCAD.hpp
+)
+
+# Add VCAD sources to libslic3r
+target_sources(libslic3r PRIVATE
+    ${VCAD_SOURCES}
+)
+
+# Optional: Add Python support for advanced OpenVCAD features
+option(ENABLE_VCAD_PYTHON "Enable Python support for OpenVCAD integration" OFF)
+
+if(ENABLE_VCAD_PYTHON)
+    find_package(Python3 COMPONENTS Interpreter Development)
+    
+    if(Python3_FOUND)
+        target_compile_definitions(libslic3r PRIVATE VCAD_PYTHON_SUPPORT)
+        target_include_directories(libslic3r PRIVATE ${Python3_INCLUDE_DIRS})
+        target_link_libraries(libslic3r PRIVATE ${Python3_LIBRARIES})
+        
+        message(STATUS "OpenVCAD Python support enabled")
+        message(STATUS "Python version: ${Python3_VERSION}")
+        message(STATUS "Python include: ${Python3_INCLUDE_DIRS}")
+    else()
+        message(WARNING "Python3 not found, OpenVCAD Python support disabled")
+    endif()
+endif()
+
+# Add VCAD file type to supported formats
+# This would be integrated into the main file type detection system
